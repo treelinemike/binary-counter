@@ -69,8 +69,8 @@ int main(void) {
 	sei();
 
 	// configure and clear output port
-	PORTA_DIR |= 0xFF;
-	PORTA.OUT &= ~0xFF;
+	PORTC_DIR |= 0xFF;
+	PORTC.OUT &= ~0xFF;
 
 	// do nothing while waiting for interrupt to fire
 	while(1){
@@ -81,5 +81,5 @@ int main(void) {
 // timer overflow interrupt vector
 // note: interrupt flag bit automatically cleared on execution
 ISR(TCC0_OVF_vect){
-		PORTA.OUT = ++binary_count_val;
+		PORTC.OUT = ~(++binary_count_val);
 }
