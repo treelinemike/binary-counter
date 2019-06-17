@@ -70,7 +70,7 @@ int main(void) {
 
 	// configure and clear output port
 	PORTC_DIR |= 0xFF;
-	PORTC.OUT &= ~0xFF;
+	PORTC.OUT |= 0xFF;
 
 	// do nothing while waiting for interrupt to fire
 	while(1){
