@@ -103,28 +103,6 @@ F 3 "" H 4300 3450 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L imu_daq_hardware-rescue:+3.3V #PWR03
-U 1 1 575EEBDE
-P 7100 3200
-F 0 "#PWR03" H 7100 3050 50  0001 C CNN
-F 1 "+3.3V" H 7100 3340 50  0000 C CNN
-F 2 "" H 7100 3200 50  0000 C CNN
-F 3 "" H 7100 3200 50  0000 C CNN
-	1    7100 3200
-	1    0    0    -1  
-$EndComp
-$Comp
-L imu_daq_hardware-rescue:+3.3V #PWR07
-U 1 1 575EF351
-P 5950 3850
-F 0 "#PWR07" H 5950 3700 50  0001 C CNN
-F 1 "+3.3V" H 5950 3990 50  0000 C CNN
-F 2 "" H 5950 3850 50  0000 C CNN
-F 3 "" H 5950 3850 50  0000 C CNN
-	1    5950 3850
-	1    0    0    -1  
-$EndComp
-$Comp
 L imu_daq_hardware-rescue:GND #PWR08
 U 1 1 575EF431
 P 5950 4150
@@ -133,17 +111,6 @@ F 1 "GND" H 5950 4000 50  0000 C CNN
 F 2 "" H 5950 4150 50  0000 C CNN
 F 3 "" H 5950 4150 50  0000 C CNN
 	1    5950 4150
-	1    0    0    -1  
-$EndComp
-$Comp
-L imu_daq_hardware-rescue:GND #PWR010
-U 1 1 575F0451
-P 6050 6750
-F 0 "#PWR010" H 6050 6500 50  0001 C CNN
-F 1 "GND" H 6050 6600 50  0000 C CNN
-F 2 "" H 6050 6750 50  0000 C CNN
-F 3 "" H 6050 6750 50  0000 C CNN
-	1    6050 6750
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -218,8 +185,6 @@ Connection ~ 5250 5200
 Wire Wire Line
 	4650 3200 4650 3250
 Wire Wire Line
-	7100 3200 7100 3250
-Wire Wire Line
 	7200 3300 7200 3250
 Wire Wire Line
 	7100 3250 7200 3250
@@ -256,8 +221,6 @@ Wire Wire Line
 	5250 3550 5250 3600
 Wire Wire Line
 	5250 3600 6300 3600
-Wire Wire Line
-	6050 6750 6050 6550
 Wire Wire Line
 	7150 7250 7250 7250
 Connection ~ 7700 3250
@@ -365,17 +328,6 @@ F 2 "digikey-footprints:1206" V 10080 3450 50  0001 C CNN
 F 3 "~" H 10150 3450 50  0001 C CNN
 	1    10150 3450
 	0    1    1    0   
-$EndComp
-$Comp
-L imu_daq_hardware-rescue:CONN_01X03 J3
-U 1 1 575F004C
-P 5750 6450
-F 0 "J3" H 5750 6650 50  0000 C CNN
-F 1 "CONN_01X03" V 5850 6450 50  0000 C CNN
-F 2 "binary_counter_footprints:Molex_15_91_2035" H 5750 6450 50  0001 C CNN
-F 3 "" H 5750 6450 50  0000 C CNN
-	1    5750 6450
-	-1   0    0    1   
 $EndComp
 $Comp
 L power:+3V0 #PWR02
@@ -693,21 +645,6 @@ Wire Wire Line
 Wire Wire Line
 	11500 6950 11500 6450
 Connection ~ 11500 6450
-$Comp
-L Connector:TestPoint TP1
-U 1 1 5D2564BC
-P 8800 3350
-F 0 "TP1" H 8858 3468 50  0000 L CNN
-F 1 "TestPoint" H 8858 3377 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.5mm" H 9000 3350 50  0001 C CNN
-F 3 "~" H 9000 3350 50  0001 C CNN
-	1    8800 3350
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8500 3600 8800 3600
-Wire Wire Line
-	8800 3600 8800 3350
 Wire Wire Line
 	8500 4450 9500 4450
 Wire Wire Line
@@ -756,12 +693,6 @@ Wire Wire Line
 	9300 5150 9300 6950
 Wire Wire Line
 	9300 6950 10000 6950
-Wire Wire Line
-	5950 6550 6050 6550
-Wire Wire Line
-	5950 6450 6300 6450
-Wire Wire Line
-	5950 6350 6300 6350
 $Comp
 L Switch:SW_SPDT SW1
 U 1 1 5D096841
@@ -788,4 +719,111 @@ Wire Wire Line
 Wire Wire Line
 	4100 3250 4300 3250
 Connection ~ 4300 3250
+$Comp
+L dk_Test-Points:5000 TP1
+U 1 1 5D09C6B6
+P 5550 6200
+F 0 "TP1" V 5455 6247 50  0000 C CNN
+F 1 "5000" H 5550 6100 50  0001 C CNN
+F 2 "digikey-footprints:Test_Point_D1.02mm" H 5750 6400 60  0001 L CNN
+F 3 "http://www.keyelco.com/product-pdf.cfm?p=1309" H 5750 6500 60  0001 L CNN
+F 4 "36-5000-ND" H 5750 6600 60  0001 L CNN "Digi-Key_PN"
+F 5 "5000" H 5750 6700 60  0001 L CNN "MPN"
+F 6 "Test and Measurement" H 5750 6800 60  0001 L CNN "Category"
+F 7 "Test Points" H 5750 6900 60  0001 L CNN "Family"
+F 8 "http://www.keyelco.com/product-pdf.cfm?p=1309" H 5750 7000 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/keystone-electronics/5000/36-5000-ND/255326" H 5750 7100 60  0001 L CNN "DK_Detail_Page"
+F 10 "PC TEST POINT MINIATURE RED" H 5750 7200 60  0001 L CNN "Description"
+F 11 "Keystone Electronics" H 5750 7300 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 5750 7400 60  0001 L CNN "Status"
+	1    5550 6200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5650 6450 6300 6450
+Wire Wire Line
+	5650 6200 5900 6200
+Wire Wire Line
+	5900 6200 5900 6350
+Wire Wire Line
+	5900 6350 6300 6350
+Wire Wire Line
+	5650 6700 5900 6700
+$Comp
+L dk_Test-Points:5000 TP3
+U 1 1 5D0A5B91
+P 5550 6700
+F 0 "TP3" V 5455 6747 50  0000 C CNN
+F 1 "5000" H 5550 6600 50  0001 C CNN
+F 2 "digikey-footprints:Test_Point_D1.02mm" H 5750 6900 60  0001 L CNN
+F 3 "http://www.keyelco.com/product-pdf.cfm?p=1309" H 5750 7000 60  0001 L CNN
+F 4 "36-5000-ND" H 5750 7100 60  0001 L CNN "Digi-Key_PN"
+F 5 "5000" H 5750 7200 60  0001 L CNN "MPN"
+F 6 "Test and Measurement" H 5750 7300 60  0001 L CNN "Category"
+F 7 "Test Points" H 5750 7400 60  0001 L CNN "Family"
+F 8 "http://www.keyelco.com/product-pdf.cfm?p=1309" H 5750 7500 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/keystone-electronics/5000/36-5000-ND/255326" H 5750 7600 60  0001 L CNN "DK_Detail_Page"
+F 10 "PC TEST POINT MINIATURE RED" H 5750 7700 60  0001 L CNN "Description"
+F 11 "Keystone Electronics" H 5750 7800 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 5750 7900 60  0001 L CNN "Status"
+	1    5550 6700
+	0    1    1    0   
+$EndComp
+$Comp
+L dk_Test-Points:5000 TP2
+U 1 1 5D0A5458
+P 5550 6450
+F 0 "TP2" V 5455 6497 50  0000 C CNN
+F 1 "5000" H 5550 6350 50  0001 C CNN
+F 2 "digikey-footprints:Test_Point_D1.02mm" H 5750 6650 60  0001 L CNN
+F 3 "http://www.keyelco.com/product-pdf.cfm?p=1309" H 5750 6750 60  0001 L CNN
+F 4 "36-5000-ND" H 5750 6850 60  0001 L CNN "Digi-Key_PN"
+F 5 "5000" H 5750 6950 60  0001 L CNN "MPN"
+F 6 "Test and Measurement" H 5750 7050 60  0001 L CNN "Category"
+F 7 "Test Points" H 5750 7150 60  0001 L CNN "Family"
+F 8 "http://www.keyelco.com/product-pdf.cfm?p=1309" H 5750 7250 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/keystone-electronics/5000/36-5000-ND/255326" H 5750 7350 60  0001 L CNN "DK_Detail_Page"
+F 10 "PC TEST POINT MINIATURE RED" H 5750 7450 60  0001 L CNN "Description"
+F 11 "Keystone Electronics" H 5750 7550 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 5750 7650 60  0001 L CNN "Status"
+	1    5550 6450
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5900 6900 5900 6700
+$Comp
+L imu_daq_hardware-rescue:GND #PWR010
+U 1 1 575F0451
+P 5900 6900
+F 0 "#PWR010" H 5900 6650 50  0001 C CNN
+F 1 "GND" H 5900 6750 50  0000 C CNN
+F 2 "" H 5900 6900 50  0000 C CNN
+F 3 "" H 5900 6900 50  0000 C CNN
+	1    5900 6900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V0 #PWR?
+U 1 1 5D110FFB
+P 7100 3200
+F 0 "#PWR?" H 7100 3050 50  0001 C CNN
+F 1 "+3V0" H 7115 3373 50  0000 C CNN
+F 2 "" H 7100 3200 50  0001 C CNN
+F 3 "" H 7100 3200 50  0001 C CNN
+	1    7100 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7100 3200 7100 3250
+$Comp
+L power:+3V0 #PWR?
+U 1 1 5D118E83
+P 5950 3850
+F 0 "#PWR?" H 5950 3700 50  0001 C CNN
+F 1 "+3V0" H 5965 4023 50  0000 C CNN
+F 2 "" H 5950 3850 50  0001 C CNN
+F 3 "" H 5950 3850 50  0001 C CNN
+	1    5950 3850
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
