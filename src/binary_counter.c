@@ -68,9 +68,12 @@ int main(void) {
 	PMIC.CTRL |= PMIC_HILVLEN_bm | PMIC_MEDLVLEN_bm | PMIC_LOLVLEN_bm;
 	sei();
 
+
 	// configure and clear output port
-	PORTC_DIR |= 0xFF;
-	PORTC.OUT |= 0xFF;
+	// NOTE: need to make sure JTAG is disable to use highest four bits of PORTB
+	// avrdude -c jtag2pdi -P usb -px256a3b -u -U fuse4:w:0xff:m
+	PORTB_DIR |= 0xFF;
+	PORTB.OUT |= 0xFF;
 
 	// do nothing while waiting for interrupt to fire
 	while(1){
@@ -81,5 +84,5 @@ int main(void) {
 // timer overflow interrupt vector
 // note: interrupt flag bit automatically cleared on execution
 ISR(TCC0_OVF_vect){
-		PORTC.OUT = ~(++binary_count_val);
+		PORTB.OUT = ~(++binary_count_val);
 }
