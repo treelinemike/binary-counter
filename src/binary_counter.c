@@ -3,7 +3,7 @@
  * Firmware for ATxmega256A3BU to count in binary via LEDs with prescribed timing.
  * Useful for confirming synchronization of stereo cameras, etc.
  *
- * Date: 	2019-05-24
+ * Date: 	2019-06-26
  * Author: 	M. Kokko
  *
  */
@@ -16,12 +16,10 @@
 #define F_CPU 16000000UL
 #endif
 
-
 // required includes
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include "xmega_usart.h"
-//#include <avr/pgmspace.h>   // needed for EEPROM access to get ADC calibration
 #include <stddef.h>
 
 // define "no-op" macro to waste a clock cycle
@@ -29,7 +27,7 @@
 #define NOP() asm("nop")
 #endif
 
-// global variables for ADC
+// global variables
 // TODO: replace globals with another mechanism for passing data to/from ISR
 volatile uint8_t binary_count_val = 0;
 
@@ -68,9 +66,8 @@ int main(void) {
 	PMIC.CTRL |= PMIC_HILVLEN_bm | PMIC_MEDLVLEN_bm | PMIC_LOLVLEN_bm;
 	sei();
 
-
 	// configure and clear output port
-	// NOTE: need to make sure JTAG is disable to use highest four bits of PORTB
+	// NOTE: need to make sure JTAG is disabled to use highest four bits of PORTB
 	// avrdude -c jtag2pdi -P usb -px256a3b -u -U fuse4:w:0xff:m
 	PORTB_DIR |= 0xFF;
 	PORTB.OUT |= 0xFF;
