@@ -53,8 +53,9 @@ int main(void) {
 	TCC0.CTRLE    = 0x00;
 	TCC0.INTCTRLA = 0x00 | TC_OVFINTLVL_LO_gc; 	// enable timer overflow interrupt
 	TCC0.INTCTRLB = 0x00;
-	TCC0.PER      = 8342;     				    // 29.9688Hz
-	// 8342 at 64 prescaler
+	TCC0.PER      = 4171;     				    // 59.9377Hz
+	// 8342 at 64 prescaler for 29.9688Hz
+	// 4171 at 64 prescaler for 59.9377Hz
 	// 2085 at 256 prescaler
 	// 521 at 1024 prescaler
 
